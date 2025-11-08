@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dream League Soccer Tournament 1.0 — Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      font-family: 'Poppins', sans-serif;
+      color: #111;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 15px;
+      width: 150px;
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 22px;
+      color: #000;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p.intro {
+      text-align: center;
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .phone-field {
+      display: flex;
+      gap: 5px;
+    }
+
+    .phone-field span {
+      background: #eee;
+      border: 1px solid #ccc;
+      border-radius: 8px 0 0 8px;
+      padding: 10px;
+    }
+
+    .phone-field input {
+      border-radius: 0 8px 8px 0;
+      flex: 1;
+    }
+
+    #emailField {
+      display: none;
+    }
+
+    .terms {
+      font-size: 13px;
+      color: #555;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .terms a {
+      color: #0056ff;
+      text-decoration: none;
+    }
+
+    .terms a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      background-color: #0056ff;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 5px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0042c4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="https://img.utdstc.com/icon/cec/77d/cec77d35ca8bba84c6f3935984a318828f878dace0e3f4abbe034341ab849d99%3A200" alt="DLS 2025 Logo" class="logo">
+    <h1>DREAM LEAGUE SOCCER TOURNAMENT 1.0</h1>
+    <p class="intro">Welcome to the registration website of the Dream League Soccer Tournament competition. Kindly fill out this form.</p>
+
+    <form action="https://formspree.io/f/xpwyqoqa" method="POST">
+      
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="Full Name" placeholder="Enter your full name" required>
+
+      <label for="age">Age Category</label>
+      <select id="age" name="Age Category" required>
+        <option value="">Select your age category</option>
+        <option>Under 10</option>
+        <option>10+</option>
+        <option>15+</option>
+        <option>18+</option>
+        <option>25+</option>
+        <option>30+</option>
+      </select>
+
+      <label for="experience">Experience of playing Dream League Soccer</label>
+      <select id="experience" name="Experience" required>
+        <option value="">Select your experience level</option>
+        <option>Under 1 month</option>
+        <option>3 months</option>
+        <option>6 months</option>
+        <option>1 year</option>
+        <option>2 years</option>
+        <option>3 years</option>
+        <option>4 years</option>
+        <option>5 years</option>
+        <option>6 years</option>
+        <option>7 years</option>
+        <option>8 years</option>
+        <option>9 years</option>
+        <option>10 years</option>
+      </select>
+
+      <label for="dlsname">DLS Name</label>
+      <input type="text" id="dlsname" name="DLS Name" placeholder="Enter your Dream League Soccer name" required>
+
+      <label for="whatsapp">WhatsApp Number</label>
+      <div class="phone-field">
+        <span>+234</span>
+        <input type="tel" id="whatsapp" name="WhatsApp Number" placeholder="Enter your WhatsApp number" required>
+      </div>
+
+      <!-- YES/NO Dropdown Section -->
+      <div style="display:flex; flex-direction:column; gap:8px; margin-top:10px;">
+        <label for="receiveUpdates" style="font-weight: 700; font-size: 16px;">
+          Would you like to receive updates concerning the tournament?
+        </label>
+        <select name="Receive Updates" id="receiveUpdates" onchange="toggleEmailDropdown(this)" required style="padding:10px; border:1px solid #ccc; border-radius:8px; font-size:14px;">
+          <option value="">Select an option</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div id="emailField" style="margin-top:10px; display:none;">
+        <label for="email" style="font-weight:600;">Email Address</label>
+        <input type="email" id="email" name="Email" placeholder="Enter your email address" style="padding:10px; border:1px solid #ccc; border-radius:8px; font-size:14px;" required>
+      </div>
+
+      <p class="terms">
+        By submitting your registration, you agree to the 
+        <a href="agree.html" target="_blank">terms and conditions</a> of the Dream League Soccer Tournament organizers.
+      </p>
+
+      <button type="submit">SUBMIT REGISTRATION</button>
+
+      <input type="hidden" name="_next" value="confirmation.html" />
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+  </div>
+
+  <script>
+    // Session storage for temporary persistence
+    const formElements = document.querySelectorAll('input, select');
+    formElements.forEach(el => {
+      el.addEventListener('input', () => {
+        sessionStorage.setItem(el.name, el.value);
+      });
+    });
+
+    window.addEventListener('load', () => {
+      formElements.forEach(el => {
+        if(sessionStorage.getItem(el.name)) {
+          el.value = sessionStorage.getItem(el.name);
+          if(el.id === 'receiveUpdates') {
+            toggleEmailDropdown(el);
+          }
+        }
+      });
+    });
+
+    function toggleEmailDropdown(select) {
+      const emailField = document.getElementById('emailField');
+      if (select.value === 'Yes') {
+        emailField.style.display = 'block';
+        document.getElementById('email').required = true;
+      } else {
+        emailField.style.display = 'none';
+        document.getElementById('email').required = false;
+      }
+    }
+  </script>
+
+</body>
+</html>
